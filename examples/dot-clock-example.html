@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+	<head>
+	</head>
+	<body>
+		<span id="clock-container"></span>
+		<span id="newyork-clock-container"></span>
+		<span id="london-clock-container"></span>
+		<span id="tokyo-clock-container"></span>
+		<span id="local-clock-container"></span>
+	</body>
+		<script src="http://d3js.org/d3.v3.min.js"></script>
+		<script src="dotClock.js"></script>
+		<script>
+			var newYorkClock = new DotClock({
+				parentNode: "#newyork-clock-container",
+				clockRadius: 100,
+				timeZoneOffset: -4,
+				label: "New York"
+			});
+			var londonClock = new DotClock({
+				parentNode: "#london-clock-container",
+				clockRadius: 100,
+				timeZoneOffset: 1,
+				label: "London"
+			});
+			var tokyoClock = new DotClock({
+				parentNode: "#tokyo-clock-container",
+				clockRadius: 100,
+				timeZoneOffset: 9,
+				label: "Tokyo"
+			});
+			var localClock = new DotClock({
+				parentNode: "#local-clock-container",
+				clockRadius: 100,
+				label: function(date) {return date ? date.toLocaleTimeString() : "Local";}
+			});
+		</script>
+</html>
