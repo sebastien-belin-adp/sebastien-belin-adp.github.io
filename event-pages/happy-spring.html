@@ -1,0 +1,958 @@
+<html>
+	<head>
+
+		<style class="cp-pen-styles">
+			body {
+			}
+			
+            @media (max-width: 400px) {
+    		  .spring-card {
+    		    -ms-transform: scale(0.50); /* IE 9 */
+    			-webkit-transform: scale(0.50); /* Safari */
+    			transform-origin: 0 0;
+    			transform: scale(0.55);
+    		  }
+            }
+            @media (min-width: 401px) and (max-width: 530px)  {
+    		  .spring-card {
+    		    -ms-transform: scale(0.75); /* IE 9 */
+    			-webkit-transform: scale(0.75); /* Safari */
+    			transform-origin: 0 0;
+    			transform: scale(0.75);
+    		  }
+            }
+            @media (min-width: 531px) and (max-width: 630px)  {
+    		  .spring-card {
+    		    -ms-transform: scale(0.90); /* IE 9 */
+    			-webkit-transform: scale(0.90); /* Safari */
+    			transform-origin: 0 0;
+    			transform: scale(0.90);
+    		  }
+            }
+			
+			.happy-text {
+				font-family: cursive, Tahoma, Verdana, Segoe, sans-serif;
+				color: white;
+				font-size: 30px;
+				font-style: italic;
+				text-shadow: 0 2px 3px #397D02;
+			}			
+			.spring-text {
+			    font-family: cursive, Tahoma, Verdana, Segoe, sans-serif;
+				font-weight: bold;
+				font-size: 45px;
+				font-variant: small-caps;
+				color: #FFD110;
+				letter-spacing: 4px;
+			}
+			
+			.text-container {
+			  width: 490px;
+			  height: 90px;
+			  padding: 20px;
+			  background: #6EA412;
+			  z-index: 999;
+			  position: relative;
+			  text-align: center;
+			  outline: 1px dashed #397D02;
+			  outline-offset: -5px;
+			}
+			
+			.sky {
+			  width: 490px;
+			  height: 140px;
+			  padding: 20px;
+			  background: linear-gradient(to bottom, #67d1fb 0%, #9be2fe 100%);
+			}
+      
+            .bee {
+              position: absolute;
+              top: 150px;
+              left: 50px;
+              z-index: 100;
+              transform: scale(0.10) rotate(90deg);
+              
+              -webkit-animation: fly 6s;
+              -moz-animation: fly 6s;
+              animation: fly 6s;
+              -webkit-animation-iteration-count: infinite;
+              -moz-animation-iteration-count: infinite;
+              animation-iteration-count: infinite;
+            }
+            
+            .bee .head {
+              border-radius: 50px 50px 0px 0px ;
+              position: absolute;
+              top: 20px;
+              left: 37px;
+              width: 90px;
+              height: 50px; 
+              background: #3b210a;
+            }
+            
+            .bee .eye {
+              position: absolute;
+              top: 40px;
+              width: 5px;
+              height: 5px;
+              background: black;
+              border: 4px solid white;
+              -moz-border-radius: 50px;
+              -webkit-border-radius: 50px;
+              border-radius: 50px;
+             }
+            
+            .bee .eye-left {
+              left: 55px;
+             }
+            
+            .bee .eye-right {
+              left: 95px;
+             }
+            
+            .bee .stripes .stripe {
+              position: absolute;
+              width: 90px;
+              height: 15px;
+            }
+            
+            .bee .yellow-stripe {
+              background: #ffe001; 
+            }
+            
+            .bee .brown-stripe {
+              background: #3b210a; 
+            }
+            
+            .bee .stripes .stripe:nth-child(1) {
+              top: 70px;
+              left: 37px;
+            }
+            
+            .bee .stripes .stripe:nth-child(2) {
+              top: 85px;
+              left: 37px;
+            }
+            
+            .bee .stripes .stripe:nth-child(3) {
+              top: 100px;
+              left: 37px;
+            }
+            
+            .bee .stripes .stripe:nth-child(4) {
+              top: 115px;
+              left: 37px;
+            }
+            
+            .bee .bottom {
+              border-radius: 0px 0px 50px 50px ;
+              position: absolute;
+              top: 130px;
+              left: 37px;
+              width: 90px;
+              height: 30px; 
+              background: #ffe001;
+            }
+            
+            .bee .sting {
+              border-left: 7px solid transparent;
+              border-right: 7px solid transparent;
+              border-top: 20px solid #3b210a;
+              position: absolute;
+              top: 160px;
+              left: 75px;
+            }
+            
+            .bee .wing {
+              position: absolute;
+              top: 85px;
+              width: 60px;
+              height: 35px; 
+              background: #b8e3dc;
+              -webkit-transform:rotate(90deg); /* Safari and Chrome */
+            }
+            
+            .bee .wing-left {
+              border-radius: 50px 50px 0px 0px ;
+              left: 113px;
+              width: 60px;
+            }
+            
+            .bee .wing-right {
+              border-radius: 0px 0px 50px 50px;
+              left: -10px;
+              width: 60px;
+            }
+      
+            @-webkit-keyframes fly {
+              0% {
+                left: 50px;
+                top: 200px;
+                transform: scale(0.10) rotate(90deg);
+              }
+              10% {
+                left: 50px;
+                top: 200px;
+              }
+              25% {
+                top: 150px;
+                transform: scale(0.10) rotate(80deg);
+              }
+              35% {
+                left: 430px;
+                top: 95px;
+                transform: scale(0.10) rotate(70deg);
+              }
+              45% {
+                left: 430px;
+                top: 95px;
+                transform: scale(0.10) rotate(70deg);
+              }
+              50% {
+                left: 430px;
+                top: 95px;
+                transform: scale(0.10) rotate(-90deg);
+              }
+              70% {
+                left: 160px;
+                top: 40px;
+              }
+              75% {
+                left: 160px;
+                top: 40px;
+              }
+              80% {
+                left: 130px;
+                top: 105px;
+                transform: scale(0.10) rotate(-100deg);
+              }
+              90% {
+                left: 130px;
+                top: 105px;
+              }
+              95% {
+                left: 50px;
+                top: 220px;
+                transform: scale(0.10) rotate(-110deg);
+              }
+              100% {
+                left: 50px;
+                top: 220px;
+                transform: scale(0.10) rotate(-120deg);
+              }
+            }
+            @keyframes fly {
+              0% {
+                left: 50px;
+                top: 200px;
+                transform: scale(0.10) rotate(90deg);
+              }
+              10% {
+                left: 50px;
+                top: 200px;
+              }
+              25% {
+                top: 150px;
+                transform: scale(0.10) rotate(80deg);
+              }
+              35% {
+                left: 430px;
+                top: 95px;
+                transform: scale(0.10) rotate(70deg);
+              }
+              45% {
+                left: 430px;
+                top: 95px;
+                transform: scale(0.10) rotate(70deg);
+              }
+              50% {
+                left: 430px;
+                top: 95px;
+                transform: scale(0.10) rotate(-90deg);
+              }
+              70% {
+                left: 160px;
+                top: 40px;
+              }
+              75% {
+                left: 160px;
+                top: 40px;
+              }
+              80% {
+                left: 130px;
+                top: 105px;
+                transform: scale(0.10) rotate(-100deg);
+              }
+              90% {
+                left: 130px;
+                top: 105px;
+              }
+              95% {
+                left: 50px;
+                top: 220px;
+                transform: scale(0.10) rotate(-110deg);
+              }
+              100% {
+                left: 50px;
+                top: 220px;
+                transform: scale(0.10) rotate(-120deg);
+              }
+            }
+            @-webkit-keyframes skyfly {
+              0% {
+                left: 50px;
+                top: 200px;
+                transform: scale(0.10) rotate(90deg);
+              }
+              10% {
+                left: 50px;
+                top: 200px;
+              }
+              25% {
+                top: 150px;
+                transform: scale(0.10) rotate(80deg);
+              }
+              35% {
+                left: 430px;
+                top: 95px;
+                transform: scale(0.10) rotate(70deg);
+              }
+              45% {
+                left: 430px;
+                top: 95px;
+                transform: scale(0.10) rotate(70deg);
+              }
+              50% {
+                left: 430px;
+                top: 95px;
+                transform: scale(0.10) rotate(-90deg);
+              }
+              70% {
+                left: 160px;
+                top: 40px;
+              }
+              75% {
+                left: 160px;
+                top: 40px;
+              }
+              80% {
+                left: 130px;
+                top: 105px;
+                transform: scale(0.10) rotate(-100deg);
+              }
+              90% {
+                left: 130px;
+                top: 105px;
+              }
+              95% {
+                left: 50px;
+                top: 220px;
+                transform: scale(0.10) rotate(-110deg);
+              }
+              100% {
+                left: 50px;
+                top: 220px;
+                transform: scale(0.10) rotate(-120deg);
+              }
+            }
+                  
+            
+            @keyframes delfixblueani1 {
+              0% {
+                transform: translateY(25.61617px) translateX(42.08005px) rotate(-2deg) skewX(2deg) scale(1);
+              }
+              50% {
+                transform: translateY(25.61617px) translateX(43.7886px) rotate(-2deg) skewX(2deg) scale(1.14645);
+              }
+              100% {
+                transform: translateY(25.61617px) translateX(42.08005px) rotate(-2deg) skewX(2deg) scale(1);
+              }
+            }
+            @keyframes delfixblueani2 {
+              0% {
+                transform: translateY(47.80748px) translateX(25.95712px) rotate(70deg) skewX(2deg) scale(1);
+              }
+              50% {
+                transform: translateY(49.43241px) translateX(26.48509px) rotate(70deg) skewX(2deg) scale(1.14645);
+              }
+              100% {
+                transform: translateY(47.80748px) translateX(25.95712px) rotate(70deg) skewX(2deg) scale(1);
+              }
+            }
+            @keyframes delfixblueani3 {
+              0% {
+                transform: translateY(39.33115px) translateX(-0.13034px) rotate(142deg) skewX(2deg) scale(1);
+              }
+              50% {
+                transform: translateY(40.33541px) translateX(-1.51258px) rotate(142deg) skewX(2deg) scale(1.14645);
+              }
+              100% {
+                transform: translateY(39.33115px) translateX(-0.13034px) rotate(142deg) skewX(2deg) scale(1);
+              }
+            }
+            @keyframes delfixblueani4 {
+              0% {
+                transform: translateY(11.90118px) translateX(-0.13034px) rotate(214deg) skewX(2deg) scale(1);
+              }
+              50% {
+                transform: translateY(10.89692px) translateX(-1.51258px) rotate(214deg) skewX(2deg) scale(1.14645);
+              }
+              100% {
+                transform: translateY(11.90118px) translateX(-0.13034px) rotate(214deg) skewX(2deg) scale(1);
+              }
+            }
+            @keyframes delfixblueani5 {
+              0% {
+                transform: translateY(3.42485px) translateX(25.95712px) rotate(286deg) skewX(2deg) scale(1);
+              }
+              50% {
+                transform: translateY(1.79992px) translateX(26.48509px) rotate(286deg) skewX(2deg) scale(1.14645);
+              }
+              100% {
+                transform: translateY(3.42485px) translateX(25.95712px) rotate(286deg) skewX(2deg) scale(1);
+              }
+            }
+
+			.flowers-container {
+			  position: relative;
+			  top: 0;
+              width: 100%;
+			}
+			.flower-element {
+			  position: relative;
+			  float: left;
+			  margin: 0 9px;
+			}
+			.flower {
+			  -webkit-box-sizing: content-box;
+			  -moz-box-sizing: content-box;
+			  box-sizing: content-box;
+			  border: none;
+			  -webkit-border-radius: 50% / 60% 60% 40% 40%;
+			  border-radius: 50% / 60% 60% 40% 40%;
+			  color: rgba(0,0,0,1);
+			  -o-text-overflow: clip;
+			  text-overflow: clip;
+			}
+      
+          .flower {
+            position: relative;
+            width: 15em;
+            height: 15em;
+            border-radius: 0%;
+            margin: 0 auto;
+          }
+          
+          .sun-container {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            width: 80px;
+            height: 80px;
+            border-radius: 0 0 50%;
+            overflow: hidden;
+          }
+          
+          .sun {
+            position: relative;
+            top: -35px;
+            left: -35px;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(ellipse at center, rgba(244, 216, 0,1) 0%,rgba(247,189,0,1) 52%,rgba(244, 175, 0,1) 67%,rgba(247,152,0,1) 100%);
+            border-radius: 50%;
+            overflow: hidden;
+            transition: opacity 0.25s ease-in-out;
+            opacity: 1;
+          }
+          
+          .gerbera {
+            top: 30px;
+            left: 50px;
+          }
+          
+          .sunflower {
+            top: 30px;
+            left: 200px;
+          }
+          
+          .delfixblue {
+            top: 30px;
+            left: 350px;
+          }
+          
+          .flower-wrapper {
+              position: absolute;
+          }
+          
+          .gerbera .flower-wrapper {
+              top: -5px;
+          }
+          
+          .sunflower .flower-wrapper {
+              top: -15px;
+          }
+          
+          .delfixblue .flower-wrapper {
+              top: 10px;
+          }
+          
+          .core {
+            position: absolute;
+            border-radius: 50%;
+            overflow: hidden;
+            transition: opacity 0.25s ease-in-out;
+            opacity: 1;
+            z-index: 50;
+          }
+          
+          .gerbera .core {
+            top: 33.33333px;
+            left: 33.33333px;
+            width: 33.33333px;
+            height: 33.33333px;
+            background: radial-gradient(ellipse at center, rgba(247,189,0,1) 0%,rgba(247,189,0,1) 52%,rgba(247,152,0,1) 67%,rgba(247,152,0,1) 100%);
+          }
+          
+          .sunflower .core {
+            top: 21.42857px;
+            left: 21.42857px;
+            width: 57.14286px;
+            height: 57.14286px;
+            background: radial-gradient(ellipse at center, #7C4B22 0%, #7C4B22 52%, #f79800 67%, #f79800 100%);
+          }
+          
+          .delfixblue .core {
+            top: 26.25px;
+            left: 26.25px;
+            width: 17.5px;
+            height: 17.5px;
+            background: radial-gradient(ellipse at center, #f7bd00 0%, #C5CEDA 52%, #C5CEDA 67%, #f79800 100%);
+          }
+          
+          .petal-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            z-index: 60;
+          }
+          
+          .petal {
+            position: absolute;
+            width: 19.24501px;
+            height: 16.66667px;
+            border-radius: 0 50% 50% 50%;
+            box-shadow: -2px -2px 20px rgba(255,255,255,0.5) inset, 0px 0px 2px rgba(0,0,0,0.5);
+            box-sizing: border-box;
+            overflow: hidden;
+            transition: opacity 0.25s ease-in-out;
+            opacity: 1;
+          }
+          
+          .gerbera .petal {
+            width: 19.24501px;
+            height: 16.66667px;
+            background: linear-gradient(135deg, #e700fc 0%, #ff5bff 75%, #ffc1ff 100%);
+            border-radius: 0 50% 50% 50%;
+          }
+          
+          .sunflower .petal {
+            width: 19.24501px;
+            height: 16.66667px;
+            background: linear-gradient(135deg, rgba(228, 210, 34,1) 0%,rgba(228, 212, 34, 1) 75%,rgba(255, 214, 34, 1) 100%);
+            border-radius: 100% 50% 20% 50%;
+          }
+          
+          .delfixblue .petal {
+            width: 32.50656px;
+            height: 18.76767px;
+            background: linear-gradient(135deg, rgba(69, 98, 251, 1) 0%,rgba(69, 98, 251, 1) 75%,rgba(112, 140, 249, 1) 100%);
+            border-radius: 50% 50% 50% 50%;
+          }
+          
+          .gerbera .petal:nth-child(1) {
+            animation: ani1 2s ease-in-out infinite;
+            animation-delay: 0s;
+            transform: translateY(41.66667px) translateX(73.71083px) rotate(-30deg) skewX(30deg) scale(1);
+          }
+          .gerbera .petal:nth-child(2) {
+            animation: ani2 2s ease-in-out infinite;
+            animation-delay: 0.16667s;
+            transform: translateY(58.33333px) translateX(69.24501px) rotate(0deg) skewX(30deg) scale(1);
+          }
+          .gerbera .petal:nth-child(3) {
+            animation: ani3 2s ease-in-out infinite;
+            animation-delay: 0.33333s;
+            transform: translateY(70.53418px) translateX(57.04416px) rotate(30deg) skewX(30deg) scale(1);
+          }
+          .gerbera .petal:nth-child(4) {
+            animation: ani4 2s ease-in-out infinite;
+            animation-delay: 0.5s;
+            transform: translateY(75px) translateX(40.3775px) rotate(60deg) skewX(30deg) scale(1);
+          }
+          .gerbera .petal:nth-child(5) {
+            animation: ani5 2s ease-in-out infinite;
+            animation-delay: 0.66667s;
+            transform: translateY(70.53418px) translateX(23.71083px) rotate(90deg) skewX(30deg) scale(1);
+          }
+          .gerbera .petal:nth-child(6) {
+            animation: ani6 2s ease-in-out infinite;
+            animation-delay: 0.83333s;
+            transform: translateY(58.33333px) translateX(11.50998px) rotate(120deg) skewX(30deg) scale(1);
+          }
+          .gerbera .petal:nth-child(7) {
+            animation: ani7 2s ease-in-out infinite;
+            animation-delay: 1s;
+            transform: translateY(41.66667px) translateX(7.04416px) rotate(150deg) skewX(30deg) scale(1);
+          }
+          .gerbera .petal:nth-child(8) {
+            animation: ani8 2s ease-in-out infinite;
+            animation-delay: 1.16667s;
+            transform: translateY(25px) translateX(11.50998px) rotate(180deg) skewX(30deg) scale(1);
+          }
+          .gerbera .petal:nth-child(9) {
+            animation: ani9 2s ease-in-out infinite;
+            animation-delay: 1.33333s;
+            transform: translateY(12.79915px) translateX(23.71083px) rotate(210deg) skewX(30deg) scale(1);
+          }
+          .gerbera .petal:nth-child(10) {
+            animation: ani10 2s ease-in-out infinite;
+            animation-delay: 1.5s;
+            transform: translateY(8.33333px) translateX(40.3775px) rotate(240deg) skewX(30deg) scale(1);
+          }
+          .gerbera .petal:nth-child(11) {
+            animation: ani11 2s ease-in-out infinite;
+            animation-delay: 1.66667s;
+            transform: translateY(12.79915px) translateX(57.04416px) rotate(270deg) skewX(30deg) scale(1);
+          }
+          .gerbera .petal:nth-child(12) {
+            animation: ani12 2s ease-in-out infinite;
+            animation-delay: 1.83333s;
+            transform: translateY(25px) translateX(69.24501px) rotate(300deg) skewX(30deg) scale(1);
+          }
+          
+          .sunflower .petal:nth-child(1) {
+            animation: ani1 2s ease-in-out infinite;
+            animation-delay: 0s;
+            transform: translateY(41.66667px) translateX(73.71083px) rotate(-30deg) skewX(30deg) scale(1);
+          }
+          .sunflower .petal:nth-child(2) {
+            animation: ani2 2s ease-in-out infinite;
+            animation-delay: 0.08333s;
+            transform: translateY(50.29397px) translateX(72.57502px) rotate(-15deg) skewX(30deg) scale(1);
+          }
+          .sunflower .petal:nth-child(3) {
+            animation: ani3 2s ease-in-out infinite;
+            animation-delay: 0.16667s;
+            transform: translateY(58.33333px) translateX(69.24501px) rotate(0deg) skewX(30deg) scale(1);
+          }
+          .sunflower .petal:nth-child(4) {
+            animation: ani4 2s ease-in-out infinite;
+            animation-delay: 0.25s;
+            transform: translateY(65.23689px) translateX(63.94772px) rotate(15deg) skewX(30deg) scale(1);
+          }
+          .sunflower .petal:nth-child(5) {
+            animation: ani5 2s ease-in-out infinite;
+            animation-delay: 0.33333s;
+            transform: translateY(70.53418px) translateX(57.04416px) rotate(30deg) skewX(30deg) scale(1);
+          }
+          .sunflower .petal:nth-child(6) {
+            animation: ani6 2s ease-in-out infinite;
+            animation-delay: 0.41667s;
+            transform: translateY(73.86419px) translateX(49.0048px) rotate(45deg) skewX(30deg) scale(1);
+          }
+          .sunflower .petal:nth-child(7) {
+            animation: ani7 2s ease-in-out infinite;
+            animation-delay: 0.5s;
+            transform: translateY(75px) translateX(40.3775px) rotate(60deg) skewX(30deg) scale(1);
+          }
+          .sunflower .petal:nth-child(8) {
+            animation: ani8 2s ease-in-out infinite;
+            animation-delay: 0.58333s;
+            transform: translateY(73.86419px) translateX(31.75019px) rotate(75deg) skewX(30deg) scale(1);
+          }
+          .sunflower .petal:nth-child(9) {
+            animation: ani9 2s ease-in-out infinite;
+            animation-delay: 0.66667s;
+            transform: translateY(70.53418px) translateX(23.71083px) rotate(90deg) skewX(30deg) scale(1);
+          }
+          .sunflower .petal:nth-child(10) {
+            animation: ani10 2s ease-in-out infinite;
+            animation-delay: 0.75s;
+            transform: translateY(65.23689px) translateX(16.80727px) rotate(105deg) skewX(30deg) scale(1);
+          }
+          .sunflower .petal:nth-child(11) {
+            animation: ani11 2s ease-in-out infinite;
+            animation-delay: 0.83333s;
+            transform: translateY(58.33333px) translateX(11.50998px) rotate(120deg) skewX(30deg) scale(1);
+          }
+          .sunflower .petal:nth-child(12) {
+            animation: ani12 2s ease-in-out infinite;
+            animation-delay: 0.91667s;
+            transform: translateY(50.29397px) translateX(8.17997px) rotate(135deg) skewX(30deg) scale(1);
+          }
+          .sunflower .petal:nth-child(13) {
+            animation: ani13 2s ease-in-out infinite;
+            animation-delay: 1s;
+            transform: translateY(41.66667px) translateX(7.04416px) rotate(150deg) skewX(30deg) scale(1);
+          }
+          .sunflower .petal:nth-child(14) {
+            animation: ani14 2s ease-in-out infinite;
+            animation-delay: 1.08333s;
+            transform: translateY(33.03937px) translateX(8.17997px) rotate(165deg) skewX(30deg) scale(1);
+          }
+          .sunflower .petal:nth-child(15) {
+            animation: ani15 2s ease-in-out infinite;
+            animation-delay: 1.16667s;
+            transform: translateY(25px) translateX(11.50998px) rotate(180deg) skewX(30deg) scale(1);
+          }
+          .sunflower .petal:nth-child(16) {
+            animation: ani16 2s ease-in-out infinite;
+            animation-delay: 1.25s;
+            transform: translateY(18.09644px) translateX(16.80727px) rotate(195deg) skewX(30deg) scale(1);
+          }
+          .sunflower .petal:nth-child(17) {
+            animation: ani17 2s ease-in-out infinite;
+            animation-delay: 1.33333s;
+            transform: translateY(12.79915px) translateX(23.71083px) rotate(210deg) skewX(30deg) scale(1);
+          }
+          .sunflower .petal:nth-child(18) {
+            animation: ani18 2s ease-in-out infinite;
+            animation-delay: 1.41667s;
+            transform: translateY(9.46914px) translateX(31.75019px) rotate(225deg) skewX(30deg) scale(1);
+          }
+          .sunflower .petal:nth-child(19) {
+            animation: ani19 2s ease-in-out infinite;
+            animation-delay: 1.5s;
+            transform: translateY(8.33333px) translateX(40.3775px) rotate(240deg) skewX(30deg) scale(1);
+          }
+          .sunflower .petal:nth-child(20) {
+            animation: ani20 2s ease-in-out infinite;
+            animation-delay: 1.58333s;
+            transform: translateY(9.46914px) translateX(49.0048px) rotate(255deg) skewX(30deg) scale(1);
+          }
+          .sunflower .petal:nth-child(21) {
+            animation: ani21 2s ease-in-out infinite;
+            animation-delay: 1.66667s;
+            transform: translateY(12.79915px) translateX(57.04416px) rotate(270deg) skewX(30deg) scale(1);
+          }
+          .sunflower .petal:nth-child(22) {
+            animation: ani22 2s ease-in-out infinite;
+            animation-delay: 1.75s;
+            transform: translateY(18.09644px) translateX(63.94772px) rotate(285deg) skewX(30deg) scale(1);
+          }
+          .sunflower .petal:nth-child(23) {
+            animation: ani23 2s ease-in-out infinite;
+            animation-delay: 1.83333s;
+            transform: translateY(25px) translateX(69.24501px) rotate(300deg) skewX(30deg) scale(1);
+          }
+          .sunflower .petal:nth-child(24) {
+            animation: ani24 2s ease-in-out infinite;
+            animation-delay: 1.91667s;
+            transform: translateY(33.03937px) translateX(72.57502px) rotate(315deg) skewX(30deg) scale(1);
+          }
+          
+          .delfixblue .petal:nth-child(1) {
+            animation: delfixblueani1 2s ease-in-out infinite;
+            animation-delay: 0s;
+            transform: translateY(25.61617px) translateX(42.08005px) rotate(-2deg) skewX(2deg) scale(1);
+          }
+          .delfixblue .petal:nth-child(2) {
+            animation: delfixblueani2 2s ease-in-out infinite;
+            animation-delay: 0.4s;
+            transform: translateY(47.80748px) translateX(25.95712px) rotate(70deg) skewX(2deg) scale(1);
+          }
+          .delfixblue .petal:nth-child(3) {
+            animation: delfixblueani3 2s ease-in-out infinite;
+            animation-delay: 0.8s;
+            transform: translateY(39.33115px) translateX(-0.13034px) rotate(142deg) skewX(2deg) scale(1);
+          }
+          .delfixblue .petal:nth-child(4) {
+            animation: delfixblueani4 2s ease-in-out infinite;
+            animation-delay: 1.2s;
+            transform: translateY(11.90118px) translateX(-0.13034px) rotate(214deg) skewX(2deg) scale(1);
+          }
+          .delfixblue .petal:nth-child(5) {
+            animation: delfixblueani5 2s ease-in-out infinite;
+            animation-delay: 1.6s;
+            transform: translateY(3.42485px) translateX(25.95712px) rotate(286deg) skewX(2deg) scale(1);
+          }
+          
+          .stem {
+            position: absolute;
+            top: 40px;
+            width: 5px;
+            height: 90px;
+            margin: 0;
+            background-color: #6EA412;
+            z-index: 40;
+          }
+          .stem:before {
+            transform: rotateY(140deg);
+            -moz-transform: rotateY(140deg);
+            -webkit-transform: rotateY(140deg);
+            -o-transform: rotateY(140deg);
+            -moz-transform-origin: right;
+            -webkit-transform-origin: right;
+            -moz-animation-name: turn-left;
+            -webkit-animation-name: turn-left;
+            -webkit-animation-fill-mode: forwards;
+            -moz-animation-fill-mode: forwards;
+            -webkit-animation-delay: 4s;
+            -moz-animation-delay: 4s;
+            -moz-animation-duration: 4s;
+            -webkit-animation-duration: 4s;
+            content: '';
+            width: 30px;
+            height: 30px;
+            display: block;
+            background: #7fb33b;
+            border-radius: 20px 0 20px 0;
+            box-shadow: 0 0 0 0.2em #6EA412 inset;
+            z-index: 0;
+            position: relative;
+            left: -52;
+            top: 45%;
+          }
+          .stem:after {
+            transform: rotateY(140deg);
+            -moz-transform: rotateY(140deg);
+            -webkit-transform: rotateY(140deg);
+            -o-transform: rotateY(140deg);
+            -moz-transform-origin: right;
+            -webkit-transform-origin: right;
+            -moz-animation-name: turn-left;
+            -webkit-animation-name: turn-left;
+            -webkit-animation-fill-mode: forwards;
+            -moz-animation-fill-mode: forwards;
+            -webkit-animation-delay: 4s;
+            -moz-animation-delay: 4s;
+            -moz-animation-duration: 4s;
+            -webkit-animation-duration: 4s;
+            content: '';
+            width: 30px;
+            height: 30px;
+            display: block;
+            background: #7fb33b;
+            border-radius: 0 20px 0 20px;
+            box-shadow: 0 0 0 0.2em #6EA412 inset;
+            z-index: 0;
+            position: relative;
+            left: -26px;
+            top: 20%;
+          }
+          
+          .gerbera .stem {
+            left: 47px
+          }
+          
+          .sunflower .stem {
+            left: 47px
+          }
+          
+          .delfixblue .stem {
+            left: 31px
+          }
+
+		</style>
+	</head>
+
+	<body>
+		<div class="spring-card">
+			<div class="sky">
+              <div class="sun-container">
+                <div class="sun"></div>
+              </div>
+              
+              <div class="bee">
+                <div class="head"></div>
+                <div class="eye eye-left"></div>
+                <div class="eye eye-right"></div>
+                <div class="stripes">
+                  <div class="stripe yellow-stripe"></div>
+                  <div class="stripe brown-stripe"></div>
+                  <div class="stripe yellow-stripe"></div>
+                  <div class="stripe brown-stripe"></div>
+                </div>
+                <div class="bottom"></div>
+                <div class="sting"></div>
+                <div class="wing wing-left"></div>
+                <div class="wing wing-right"></div>
+              </div>
+
+			  <div class="flowers-container">
+				<div class="flower-element gerbera">
+                  <div class="stem"></div>
+                  <div class="flower-wrapper">
+                    <div class="petal-wrapper">
+                      <div class="petal"></div>
+                      <div class="petal"></div>
+                      <div class="petal"></div>
+                      <div class="petal"></div>
+                      <div class="petal"></div>
+                      <div class="petal"></div>
+                      <div class="petal"></div>
+                      <div class="petal"></div>
+                      <div class="petal"></div>
+                      <div class="petal"></div>
+                      <div class="petal"></div>
+                      <div class="petal"></div>
+                    </div>
+                    <div class="core"></div>
+                  </div>  
+				</div>
+				<div class="flower-element sunflower">
+                  <div class="stem"></div>
+                  <div class="flower-wrapper">
+                    <div class="petal-wrapper">
+                      <div class="petal"></div>
+                      <div class="petal"></div>
+                      <div class="petal"></div>
+                      <div class="petal"></div>
+                      <div class="petal"></div>
+                      <div class="petal"></div>
+                      <div class="petal"></div>
+                      <div class="petal"></div>
+                      <div class="petal"></div>
+                      <div class="petal"></div>
+                      <div class="petal"></div>
+                      <div class="petal"></div>
+                      <div class="petal"></div>
+                      <div class="petal"></div>
+                      <div class="petal"></div>
+                      <div class="petal"></div>
+                      <div class="petal"></div>
+                      <div class="petal"></div>
+                      <div class="petal"></div>
+                      <div class="petal"></div>
+                      <div class="petal"></div>
+                      <div class="petal"></div>
+                      <div class="petal"></div>
+                      <div class="petal"></div>
+                    </div>
+                    <div class="core"></div>
+                  </div>
+				</div>
+				<div class="flower-element delfixblue">
+                  <div class="stem"></div>
+                  <div class="flower-wrapper">            
+                    <div class="petal-wrapper">
+                      <div class="petal"></div>
+                      <div class="petal"></div>
+                      <div class="petal"></div>
+                      <div class="petal"></div>
+                      <div class="petal"></div>
+                    </div>
+                    <div class="core"></div>
+                  </div>
+				</div>
+			  </div>
+			</div>
+			<div class="text-container">
+			  <span class="happy-text">Happy</span><br/><span class="spring-text">Spring</span>
+			</div>
+		</div>
+	</body>
+</html>
