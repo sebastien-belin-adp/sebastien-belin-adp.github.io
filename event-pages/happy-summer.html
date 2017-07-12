@@ -1,0 +1,771 @@
+<html>
+  <head>
+
+    <style class="cp-pen-styles">
+    	body {
+    	}
+          
+        @media (max-width: 400px) {
+            .summer-card {
+                -ms-transform: scale(0.50); /* IE 9 */
+                -webkit-transform: scale(0.50); /* Safari */
+                transform-origin: 0 0;
+                transform: scale(0.55);
+            }
+        }
+        @media (min-width: 401px) and (max-width: 530px)  {
+            .summer-card {
+                -ms-transform: scale(0.75); /* IE 9 */
+                -webkit-transform: scale(0.75); /* Safari */
+                transform-origin: 0 0;
+                transform: scale(0.75);
+            }
+        }
+        @media (min-width: 531px) and (max-width: 630px)  {
+            .summer-card {
+                -ms-transform: scale(0.90); /* IE 9 */
+                -webkit-transform: scale(0.90); /* Safari */
+                transform-origin: 0 0;
+                transform: scale(0.90);
+            }
+        }
+          
+        .sand-text {
+            font-weight: bold;
+            font-size: 38px;
+            font-variant: small-caps;
+            font-family: 'Atomic Age', cursive;
+            letter-spacing: 4px;
+            -moz-background-clip: text;
+            -o-background-clip: text;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: rgba(226, 210, 147, 0.5);
+            text-transform: capitalize;
+            text-shadow: 2px 1px 1px rgba(235,222,170, 0.8), 0px -1px 0px rgba(165,152,100, 0.9), 1px 0px 0px rgba(165,152,100, .9);
+            -moz-transform: skew(-5deg, -5deg);
+            -o-transform: skew(-5deg, -5deg);
+            -ms-transform: skew(-5deg, -5deg);
+            -webkit-transform: skew(-5deg, -5deg);
+            transform: skew(-5deg, -5deg);
+            display: inline-block;
+        }
+        .happy-text {
+            padding-left: 5px;
+        }            
+        .summer-text {
+            padding-left: 180px;
+            -moz-transform: skew(-5deg, -7deg);
+            -o-transform: skew(-5deg, -7deg);
+            -webkit-transform: skew(-5deg, -7deg);
+            transform: skew(-5deg, -7deg);
+        }
+    
+        .sea-star-container {
+            position: relative;
+            -moz-transform: skew(-10deg, -10deg);
+            -o-transform: skew(-10deg, -10deg);
+            -webkit-transform: skew(-10deg, -10deg);
+            transform: skew(-10deg, -10deg);
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+        }
+        .sea-star {
+            font-family: cursive, Tahoma, Verdana, Segoe, sans-serif;
+            font-weight: bold;
+            font-size: 45px;
+            color: #F5608A;
+            text-shadow: rgba(245, 96, 138, 0.89) 1px 1px 1px;
+            font-family: 'Atomic Age', cursive;
+            width: 22px;
+            height: 22px;
+            position: relative;
+            top: 0;
+            line-height: 35px;
+            -webkit-transform-style: preserve-3d;
+                    transform-style: preserve-3d;
+            animation: jumpAndRotate 10s infinite;
+        }
+          
+        .text-container {
+             width: 490px;
+             height: 90px;
+             padding: 20px;
+             background: #EBDEAA;
+             z-index: 999;
+             position: relative;
+             outline: 1px dashed #F7E9E0;
+             outline-offset: -5px;
+        }
+          
+        .sky {
+             width: 490px;
+             height: 125px;
+             padding: 20px;
+             background: linear-gradient(to bottom, #67d1fb 0%, #9be2fe 100%);
+        }
+    
+        @keyframes sunanimation {
+          0% {
+            transform: scale(1); background: radial-gradient(ellipse at center, rgba(244, 216, 0,1) 0%,rgba(247,189,0,1) 52%,rgba(244, 175, 0,1) 67%,rgba(247,152,0,1) 100%);
+          }
+          10% {
+            background: radial-gradient(ellipse at center, rgba(244, 216, 0,1) 0%,rgba(247,189,0,1) 42%,rgba(244, 175, 0,1) 57%,rgba(247,152,0,1) 90%);
+          }
+          20% {
+            background: radial-gradient(ellipse at center, rgba(244, 216, 0,1) 0%,rgba(247,189,0,1) 32%,rgba(244, 175, 0,1) 47%,rgba(247,152,0,1) 80%);
+          }
+          30% {
+            background: radial-gradient(ellipse at center, rgba(244, 216, 0,1) 0%,rgba(247,189,0,1) 22%,rgba(244, 175, 0,1) 37%,rgba(247,152,0,1) 70%);
+          }
+          40% {
+            background: radial-gradient(ellipse at center, rgba(244, 216, 0,1) 0%,rgba(247,189,0,1) 22%,rgba(244, 175, 0,1) 37%,rgba(247,152,0,1) 60%);
+          }
+          50% {
+            transform: scale(1.1); background: radial-gradient(ellipse at center, rgba(244, 216, 0,1) 0%,rgba(247,189,0,1) 22%,rgba(244, 175, 0,1) 37%,rgba(247,152,0,1) 60%);
+          }
+          60% {
+            background: radial-gradient(ellipse at center, rgba(244, 216, 0,1) 0%,rgba(247,189,0,1) 22%,rgba(244, 175, 0,1) 37%,rgba(247,152,0,1) 60%);
+          }
+          70% {
+            background: radial-gradient(ellipse at center, rgba(244, 216, 0,1) 0%,rgba(247,189,0,1) 22%,rgba(244, 175, 0,1) 37%,rgba(247,152,0,1) 70%);
+          }
+          80% {
+            background: radial-gradient(ellipse at center, rgba(244, 216, 0,1) 0%,rgba(247,189,0,1) 32%,rgba(244, 175, 0,1) 47%,rgba(247,152,0,1) 80%);
+          }
+          90% {
+            background: radial-gradient(ellipse at center, rgba(244, 216, 0,1) 0%,rgba(247,189,0,1) 42%,rgba(244, 175, 0,1) 57%,rgba(247,152,0,1) 90%);
+          }
+          100% {
+            transform: scale(1); background: radial-gradient(ellipse at center, rgba(244, 216, 0,1) 0%,rgba(247,189,0,1) 52%,rgba(244, 175, 0,1) 67%,rgba(247,152,0,1) 100%);
+          }
+        }
+          
+        .sun-container {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            width: 80px;
+            height: 80px;
+            border-radius: 0 0 50%;
+            overflow: hidden;
+        }
+        
+        .sun {
+            position: relative;
+            top: -35px;
+            left: -35px;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(ellipse at center, rgba(244, 216, 0,1) 0%,rgba(247,189,0,1) 52%,rgba(244, 175, 0,1) 67%,rgba(247,152,0,1) 100%);
+            border-radius: 50%;
+            overflow: hidden;
+            transition: opacity 0.25s ease-in-out;
+            opacity: 1;
+            animation: sunanimation 5s ease-in-out infinite;
+            animation-delay: 0s;
+        }
+        
+        .parasol-container {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            width: 400px;
+            height: 300px;
+            border-radius: 2px;
+            overflow: hidden;
+            color: #fff;
+            z-index: 1500;
+        }
+        
+        .parasol {
+            position: absolute;
+            top: -8%;
+            left: 5%;
+            -webkit-transform-style: preserve-3d;
+                    transform-style: preserve-3d;
+            -webkit-transform: rotateX(70deg) rotateY(-15deg);
+                    transform: rotateX(70deg) rotateY(-15deg);
+        }
+        .parasol .shadowPole {
+            position: absolute;
+            z-index: -1;
+            width: 5px;
+            height: 50px;
+            top: 100px;
+            left: 97px;
+            background: #AB9038;
+            -webkit-transform-origin: 50% 0%;
+                    transform-origin: 50% 0%;
+            -webkit-transform: translateX(26px) translateZ(-148px) rotateZ(-26deg);
+                    transform: translateX(26px) translateZ(-148px) rotateZ(-26deg);
+            box-shadow: 0 0 2px 1px #AB9038;
+            border-radius: 2px;
+        }
+        .parasol .pole {
+            position: absolute;
+            z-index: 2;
+            width: 6px;
+            height: 150px;
+            top: 100px;
+            left: 97px;
+            background: #888;
+            -webkit-transform-origin: 50% 0;
+                    transform-origin: 50% 0;
+            -webkit-transform: translateZ(-1px) rotateY(-10deg) rotateX(-90deg);
+                    transform: translateZ(-1px) rotateY(-10deg) rotateX(-90deg);
+            border-radius: 2px;
+        }
+        .parasol .triangle:after {
+            content: '';
+            width: 48px;
+            height: 5px;
+            display: block;
+            border-radius: 0 0 35px 35px;
+            z-index: 0;
+            position: relative;
+            left: -24px;
+            top: 97px;
+            transform: rotateX(5deg);
+        }
+        .parasol .shadowTop .triangle:after {
+            background: #AB9038;
+        }
+        .parasol .shadowTop {
+            position: absolute;
+            z-index: -1;
+            width: 200px;
+            height: 200px;
+            top: 0;
+            left: 0;
+            border-radius: 50%;
+            -webkit-transform: translateZ(-211px) translateX(76px) translateY(-66px) scale(0.9);
+                    transform: translateZ(-211px) translateX(76px) translateY(-66px) scale(0.9);
+          /*           translateZ(-155px) translateX(59px) translateY(92px) scale(0.8) */
+        }
+        .parasol .shadowTop .triangle {
+            position: absolute;
+            top: 100px;
+            left: 77px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 25px 98px 25px;
+            border-color: transparent transparent #AB9038 transparent;
+            -webkit-transform-origin: 50% 0;
+                    transform-origin: 50% 0;
+            box-shadow: 0 0 4px 2px #AB9038;
+        }
+        .parasol .shadowTop .triangle-1 {
+            -webkit-transform: rotateZ(0deg) rotateX(-24deg) translateY(-1px);
+                    transform: rotateZ(0deg) rotateX(-24deg) translateY(-1px);
+        }
+        .parasol .shadowTop .triangle-2 {
+            -webkit-transform: rotateZ(30deg) rotateX(-24deg) translateY(-1px);
+                    transform: rotateZ(30deg) rotateX(-24deg) translateY(-1px);
+        }
+        .parasol .shadowTop .triangle-3 {
+            -webkit-transform: rotateZ(60deg) rotateX(-24deg) translateY(-1px);
+                    transform: rotateZ(60deg) rotateX(-24deg) translateY(-1px);
+        }
+        .parasol .shadowTop .triangle-4 {
+            -webkit-transform: rotateZ(90deg) rotateX(-24deg) translateY(-1px);
+                    transform: rotateZ(90deg) rotateX(-24deg) translateY(-1px);
+        }
+        .parasol .shadowTop .triangle-5 {
+            -webkit-transform: rotateZ(120deg) rotateX(-24deg) translateY(-1px);
+                    transform: rotateZ(120deg) rotateX(-24deg) translateY(-1px);
+        }
+        .parasol .shadowTop .triangle-6 {
+            -webkit-transform: rotateZ(150deg) rotateX(-24deg) translateY(-1px);
+                    transform: rotateZ(150deg) rotateX(-24deg) translateY(-1px);
+        }
+        .parasol .shadowTop .triangle-7 {
+            -webkit-transform: rotateZ(180deg) rotateX(-24deg) translateY(-1px);
+                    transform: rotateZ(180deg) rotateX(-24deg) translateY(-1px);
+        }
+        .parasol .shadowTop .triangle-8 {
+            -webkit-transform: rotateZ(210deg) rotateX(-24deg) translateY(-1px);
+                    transform: rotateZ(210deg) rotateX(-24deg) translateY(-1px);
+        }
+        .parasol .shadowTop .triangle-9 {
+            -webkit-transform: rotateZ(240deg) rotateX(-24deg) translateY(-1px);
+                    transform: rotateZ(240deg) rotateX(-24deg) translateY(-1px);
+        }
+        .parasol .shadowTop .triangle-10 {
+            -webkit-transform: rotateZ(270deg) rotateX(-24deg) translateY(-1px);
+                    transform: rotateZ(270deg) rotateX(-24deg) translateY(-1px);
+        }
+        .parasol .shadowTop .triangle-11 {
+            -webkit-transform: rotateZ(300deg) rotateX(-24deg) translateY(-1px);
+                    transform: rotateZ(300deg) rotateX(-24deg) translateY(-1px);
+        }
+        .parasol .shadowTop .triangle-12 {
+            -webkit-transform: rotateZ(330deg) rotateX(-24deg) translateY(-1px);
+                    transform: rotateZ(330deg) rotateX(-24deg) translateY(-1px);
+        }
+        .parasol .top {
+            position: relative;
+            z-index: 3;
+            width: 200px;
+            height: 200px;
+            -webkit-transform-style: preserve-3d;
+                    transform-style: preserve-3d;
+            -webkit-transform: rotateY(-12deg) rotateX(25deg);
+                    transform: rotateY(-12deg) rotateX(25deg);
+        }
+        .parasol .top .triangle:after {
+            background: #de3f3f;
+        }
+        .parasol .top .triangle {
+            position: absolute;
+            top: 100px;
+            left: 77px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 24px 98px 24px;
+            border-color: transparent transparent #fff transparent;
+            -webkit-transform-origin: 50% 0;
+                    transform-origin: 50% 0;
+        }
+        .parasol .top .triangle-1 {
+            -webkit-transform: rotateZ(0deg) rotateX(-24deg);
+                    transform: rotateZ(0deg) rotateX(-24deg);
+        }
+        .parasol .top .triangle-2 {
+            -webkit-transform: rotateZ(30deg) rotateX(-24deg);
+                    transform: rotateZ(30deg) rotateX(-24deg);
+        }
+        .parasol .top .triangle-3 {
+            -webkit-transform: rotateZ(60deg) rotateX(-24deg);
+                    transform: rotateZ(60deg) rotateX(-24deg);
+        }
+        .parasol .top .triangle-4 {
+            -webkit-transform: rotateZ(90deg) rotateX(-24deg);
+                    transform: rotateZ(90deg) rotateX(-24deg);
+        }
+        .parasol .top .triangle-5 {
+            -webkit-transform: rotateZ(120deg) rotateX(-24deg);
+                    transform: rotateZ(120deg) rotateX(-24deg);
+        }
+        .parasol .top .triangle-6 {
+            -webkit-transform: rotateZ(150deg) rotateX(-24deg);
+                    transform: rotateZ(150deg) rotateX(-24deg);
+        }
+        .parasol .top .triangle-7 {
+            -webkit-transform: rotateZ(180deg) rotateX(-24deg);
+                    transform: rotateZ(180deg) rotateX(-24deg);
+        }
+        .parasol .top .triangle-8 {
+            -webkit-transform: rotateZ(210deg) rotateX(-24deg);
+                    transform: rotateZ(210deg) rotateX(-24deg);
+        }
+        .parasol .top .triangle-9 {
+            -webkit-transform: rotateZ(240deg) rotateX(-24deg);
+                    transform: rotateZ(240deg) rotateX(-24deg);
+        }
+        .parasol .top .triangle-10 {
+            -webkit-transform: rotateZ(270deg) rotateX(-24deg);
+                    transform: rotateZ(270deg) rotateX(-24deg);
+        }
+        .parasol .top .triangle-11 {
+            -webkit-transform: rotateZ(300deg) rotateX(-24deg);
+                    transform: rotateZ(300deg) rotateX(-24deg);
+        }
+        .parasol .top .triangle-12 {
+            -webkit-transform: rotateZ(330deg) rotateX(-24deg);
+                    transform: rotateZ(330deg) rotateX(-24deg);
+        }
+        .parasol .top .triangle-1 {
+            border-color: transparent transparent #FEC501 transparent;
+            border-color: transparent transparent #FFE761 transparent;
+        }
+        .parasol .top .triangle-2 {
+        /*   border-color: transparent transparent #D70606 transparent; */
+            border-color: transparent transparent #95C16A transparent;
+        }
+        .parasol .top .triangle-3 {
+            border-color: transparent transparent #D70606 transparent;
+            border-color: transparent transparent #27649D transparent;
+        }
+        .parasol .top .triangle-4 {
+            border-color: transparent transparent #37ACC5 transparent;
+            border-color: transparent transparent #FE731E transparent;
+        }
+        .parasol .top .triangle-5 {
+            border-color: transparent transparent #FEC501 transparent;
+            border-color: transparent transparent #FFE761 transparent;
+        }
+        .parasol .top .triangle-6 {
+        /*   border-color: transparent transparent #D70606 transparent; */
+            border-color: transparent transparent #95C16A transparent;
+        }
+        .parasol .top .triangle-7 {
+            border-color: transparent transparent #D70606 transparent;
+            border-color: transparent transparent #27649D transparent;
+        }
+        .parasol .top .triangle-8 {
+            border-color: transparent transparent #37ACC5 transparent;
+            border-color: transparent transparent #FE731E transparent;
+        }
+        .parasol .top .triangle-9 {
+            border-color: transparent transparent #FEC501 transparent;
+            border-color: transparent transparent #FFE761 transparent;
+        }
+        .parasol .top .triangle-10 {
+        /*   border-color: transparent transparent #D70606 transparent; */
+            border-color: transparent transparent #95C16A transparent;
+        }
+        .parasol .top .triangle-11 {
+            border-color: transparent transparent #D70606 transparent;
+            border-color: transparent transparent #27649D transparent;
+        }
+        .parasol .top .triangle-12 {
+            border-color: transparent transparent #37ACC5 transparent;
+            border-color: transparent transparent #FE731E transparent;
+        }
+        
+        .belonging-container {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            width: 400px;
+            height: 300px;
+            overflow: hidden;
+            z-index: 1700;
+        }
+        
+        .towell-container {
+            position: relative;
+            top: 145px;
+            left: 135px;
+            transform: rotateX(-60deg) skewX(-30deg) scale(0.7);
+        }
+        
+        .towell {
+            position: relative;
+            width: 165px;
+            height: 70px;
+            background-image: repeating-linear-gradient(180deg, #1D6496, #1D6496 10px, white 10px, white 20px);
+        }
+
+        .glasses-container {
+            position: relative;
+            top: 100px;
+            left: 150px;
+            transform: rotateX(25deg) rotateY(-25deg) scale(0.7);
+        }
+        .glasses {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 54px; 
+            height: 15px;
+        }
+        .glasses-top {
+            position: absolute;
+            height: 4px;
+            width: 54px;
+            background-color: #3C3C3C;
+            top: 4px;
+            left: 0;
+            border-radius: 5px;
+        }
+        .glasses .glass {
+            position: absolute;
+            height: 15px;
+            width: 20px;
+            background-image: -webkit-linear-gradient(to bottom, #53bbb7, #3c7bb5 70%);
+            background-image: linear-gradient(to bottom, #53bbb7, #3c7bb5 70%);
+            border: 2px solid #3C3C3C;
+            top: 0;        
+        }
+        .glasses .glasses-left {
+            left: 2;
+            transform: rotate(2deg);
+            border-radius: 22px 22px 35px 30px;
+        }
+        .glasses .glasses-right {
+            left: 28px;
+            transform: rotate(-2deg);
+            border-radius: 22px 22px 30px 35px;
+        }
+
+        .flipflops-container {
+            position: relative;
+            top: 168px;
+            left: 250px;
+            width: 45px;
+            height: 43px;
+            overflow: hidden;
+            transform: scale(0.7);
+        }
+        .flipflops {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 45px;
+            height: 48px;
+        }
+        .flipflops .flipflop {
+            position: absolute;
+            height: 48px;
+            width: 20px;
+            top: 0;        
+        }
+        .flipflops .flipflop-top  {
+            height: 25px;
+            width: 20px;
+            background: yellow;
+        }
+        .flipflops .flipflop-bottom  {
+            height: 25px;
+            width: 18px;
+            margin-top: -3px;
+            background: yellow;
+        }
+        .flipflops .flipflop-left {
+            left: 0;
+        }
+        .flipflops .flipflop-left .flipflop-top  {
+            border-radius: 90% 40% 40% 40%;
+            transform: translateY(0) translateX(0px) rotate(5deg) skewX(0deg);
+        }
+        .flipflops .flipflop-left .flipflop-bottom  {
+            border-radius: 15% 15% 40% 40%;
+            transform: translateY(0) translateX(1px) rotate(-1deg) skewX(0deg);
+        }
+        .flipflops .flipflop-right {
+            left: 25px;
+        }
+        .flipflops .flipflop-right .flipflop-top  {
+            border-radius: 40% 90% 40% 40%;
+            transform: translateY(0) translateX(0px) rotate(-5deg) skewX(0deg);
+        }
+        .flipflops .flipflop-right .flipflop-bottom  {
+            border-radius: 15% 15% 40% 40%;
+            transform: translateY(0) translateX(1px) rotate(1deg) skewX(0deg);
+        }
+        
+        .sea-container {
+            position: relative;
+            width: 530px;
+            height: 15px;
+            z-index: 1000;
+            background: #1D9BCB;
+        }
+        .sea-container .fix-sea {
+            width: 100%;
+            height: 10px;
+        }
+        .sea-container .moving-sea {
+            position: relative;
+            top: 0px;
+            width: 100%;
+            height: 5px;
+            background: #1D9BCB;
+            -webkit-animation: moveUpAndDown 10s forwards;
+            animation: moveUpAndDown 10s infinite;
+            clear: both;
+        }
+        .sea-container .moving-sea .wave {
+            width: 9.99%;
+            height: 5px;
+            background: #1D9BCB;
+            border-bottom: 2px solid white;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            float: left;
+        }
+        
+        @keyframes moveUpAndDown {
+            0% { top: 0px; }
+            20% { top: 2px; }
+            30% { top: 5px; }
+            70% { top: 5px; }
+            80% { top: 2px; }
+            100% { top: 0px; }
+        }
+        @-webkit-keyframes moveUpAndDown {
+            0% { top: 0px; }
+            20% { top: 2px; }
+            30% { top: 5px; }
+            70% { top: 5px; }
+            80% { top: 2px; }
+            100% { top: 0px; }
+        }
+        @-moz-keyframes moveUpAndDown {
+            0% { top: 0px; }
+            20% { top: 2px; }
+            30% { top: 5px; }
+            70% { top: 5px; }
+            80% { top: 2px; }
+            100% { top: 0px; }
+        }
+        @-o-keyframes moveUpAndDown {
+            0% { top: 0px; }
+            20% { top: 2px; }
+            30% { top: 5px; }
+            70% { top: 5px; }
+            80% { top: 2px; }
+            100% { top: 0px; }
+        }
+        @-ms-keyframes moveUpAndDown {
+            0% { top: 0px; }
+            20% { top: 2px; }
+            30% { top: 5px; }
+            70% { top: 5px; }
+            80% { top: 2px; }
+            100% { top: 0px; }
+        }
+        
+        @keyframes jumpAndRotate {
+            0% { top: 0px; }
+            48% { top: 0px; transform: rotateZ(0deg); }
+            49% { top: -8px; transform: rotateZ(180deg); }
+            50% { top: -8px; transform: rotateZ(360deg); }
+            51% { top: -8px; transform: rotateZ(0deg); }
+            52% { top: 0px; transform: rotateZ(0deg); }
+            100% { top: 0px; }
+        }
+        @-webkit-keyframes jumpAndRotate {
+            0% { top: 0px; }
+            48% { top: 0px; -webkit-transform: rotateZ(0deg); }
+            49% { top: -8px; -webkit-transform: rotateZ(180deg); }
+            50% { top: -8px; -webkit-transform: rotateZ(360deg); }
+            51% { top: -8px; -webkit-transform: rotateZ(0deg); }
+            52% { top: 0px; -webkit-transform: rotateZ(0deg); }
+            100% { top: 0px; }  
+        }
+        @-moz-keyframes jumpAndRotate {
+            0% { top: 0px; }
+            48% { top: 0px; -moz-transform: rotateZ(0deg); }
+            49% { top: -8px; -moz-transform: rotateZ(180deg); }
+            50% { top: -8px; -moz-transform: rotateZ(360deg); }
+            51% { top: -8px; -moz-transform: rotateZ(0deg); }
+            52% { top: 0px; -moz-transform: rotateZ(0deg); 
+            100% { top: 0px; }
+          }
+        @-o-keyframes jumpAndRotate {
+            0% { top: 0px; }
+            48% { top: 0px; -o-transform: rotateZ(0deg); }
+            49% { top: -8px; -o-transform: rotateZ(180deg); }
+            50% { top: -8px; -o-transform: rotateZ(360deg); }
+            51% { top: -8px; -o-transform: rotateZ(0deg); }
+            52% { top: 0px; -o-transform: rotateZ(0deg); 
+            100% { top: 0px; }
+        }
+        @-ms-keyframes jumpAndRotate {
+            0% { top: 0px; }
+            48% { top: 0px; -ms-transform: rotateZ(0deg); }
+            49% { top: -8px; -ms-transform: rotateZ(180deg); }
+            50% { top: -8px; -ms-transform: rotateZ(360deg); }
+            51% { top: -8px; -ms-transform: rotateZ(0deg); }
+            52% { top: 0px; -ms-transform: rotateZ(0deg); 
+            100% { top: 0px; }
+        }
+
+    </style>
+  </head>
+
+  <body>
+    <div class="summer-card">
+      <div class="sky">
+        <div class="sun-container">
+          <div class="sun"></div>
+        </div>
+        
+        <div class="parasol-container">
+          <div class="parasol">
+            <div class="pole"></div>
+            <div class="shadowPole"></div>
+            <div class="top">
+              <div class="triangle triangle-1"></div>
+              <div class="triangle triangle-2"></div>
+              <div class="triangle triangle-3"></div>
+              <div class="triangle triangle-4"></div>
+              <div class="triangle triangle-5"></div>
+              <div class="triangle triangle-6"></div>
+              <div class="triangle triangle-7"></div>
+              <div class="triangle triangle-8"></div>
+              <div class="triangle triangle-9"></div>
+              <div class="triangle triangle-10"></div>
+              <div class="triangle triangle-11"></div>
+              <div class="triangle triangle-12"></div>
+            </div>
+            <div class="shadowTop">
+              <div class="shadow">
+                <div class="triangle triangle-1"></div>
+                <div class="triangle triangle-2"></div>
+                <div class="triangle triangle-3"></div>
+                <div class="triangle triangle-4"></div>
+                <div class="triangle triangle-5"></div>
+                <div class="triangle triangle-6"></div>
+                <div class="triangle triangle-7"></div>
+                <div class="triangle triangle-8"></div>
+                <div class="triangle triangle-9"></div>
+                <div class="triangle triangle-10"></div>
+                <div class="triangle triangle-11"></div>
+                <div class="triangle triangle-12"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="seashell-container">
+        </div>
+        
+        <div class="belonging-container">
+          <div class="flipflops-container">
+            <div class="flipflops">
+              <div class="flipflop-left flipflop">
+                <div class="flipflop-top"></div>
+                <div class="flipflop-bottom"></div>
+              </div>
+              <div class="flipflop-right flipflop">
+                <div class="flipflop-top"></div>
+                <div class="flipflop-bottom"></div>
+              </div>
+            </div>
+          </div>
+          <div class="towell-container">
+            <div class="towell">
+            </div>
+          </div>
+          <div class="glasses-container">
+            <div class="glasses">
+              <div class="glasses-top"></div>
+              <div class="glasses-left glass"></div>
+              <div class="glasses-right glass"></div>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+      <div class="sea-container">
+        <div class="fix-sea"></div>
+        <div class="moving-sea">
+          <div class="wave"></div>
+          <div class="wave"></div>
+          <div class="wave"></div>
+          <div class="wave"></div>
+          <div class="wave"></div>
+          <div class="wave"></div>
+          <div class="wave"></div>
+          <div class="wave"></div>
+          <div class="wave"></div>
+          <div class="wave"></div>
+        </div>
+      </div>
+      <div class="text-container">
+        <span class="happy-text sand-text">Happy</span><br><span class="summer-text sand-text">'-Summer-"</span>
+        <div class="sea-star-container">
+          <div class="sea-star">*</div>
+        </div>
+      </div>
+    </div>
+    
+  </body>
+</html>
