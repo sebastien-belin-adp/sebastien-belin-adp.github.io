@@ -1,0 +1,934 @@
+<html>
+  <head>
+  
+      <style class="cp-pen-styles">
+        body {
+        }
+          
+        @media (max-width: 400px) {
+          .halloween-card {
+            -ms-transform: scale(0.50); /* IE 9 */
+            -webkit-transform: scale(0.50); /* Safari */
+            transform-origin: 0 0;
+            transform: scale(0.55);
+          }
+        }
+        @media (min-width: 401px) and (max-width: 530px)  {
+          .halloween-card {
+            -ms-transform: scale(0.75); /* IE 9 */
+            -webkit-transform: scale(0.75); /* Safari */
+            transform-origin: 0 0;
+            transform: scale(0.75);
+          }
+        }
+        @media (min-width: 531px) and (max-width: 630px)  {
+          .halloween-card {
+            -ms-transform: scale(0.90); /* IE 9 */
+            -webkit-transform: scale(0.90); /* Safari */
+            transform-origin: 0 0;
+            transform: scale(0.90);
+          }
+        }
+          
+        .happy-text {
+            font-family: cursive, Tahoma, Verdana, Segoe, sans-serif;
+            color: #FB732F;
+            font-size: 30px;
+            font-style: italic;
+            text-shadow: 0 4px 4px #ffa200;
+            color: black;
+            text-shadow: 1px 1px 1px #ffa200;
+        }            
+        .halloween-text {
+            font-family: cursive, Tahoma, Verdana, Segoe, sans-serif;
+            font-weight: bold;
+            font-size: 45px;
+            font-style: italic;
+/*            font-variant: small-caps; */
+            color: #ffa200;
+            letter-spacing: 4px;
+            text-shadow: 0 4px 4px #ff4700;
+            text-shadow: 4px 5px 10px #ff4700;
+        }
+          
+        .text-container {
+          width: 490px;
+          height: 90px;
+          padding: 20px;
+          background: black;
+          z-index: 999;
+          position: relative;
+          text-align: center;
+/*          outline: 1px dashed #FB732F; */
+          outline-offset: -5px;
+        }
+          
+        .sky {
+          width: 490px;
+          height: 140px;
+          padding: 20px;
+          background: radial-gradient(circle at center, #fbd82f 0, #fbb32f, #FB732F 100%);
+          overflow: hidden;
+        }
+          
+        .spider-container {
+          position: relative;
+          width: 56px;
+          top: -120px;
+          left: 92%;
+          -webkit-transition: 1s ease-in-out;
+          transition: 1s ease-in-out;
+          -webkit-animation: moveUpAndDown 4s infinite;
+                  animation: moveUpAndDown 4s infinite;
+          -webkit-transform-origin: top;
+                  transform-origin: top;
+            -ms-transform: scale(0.75); /* IE 9 */
+            -webkit-transform: scale(0.75); /* Safari */
+            transform-origin: 0 0;
+            transform: scale(0.75);
+        }
+                      
+        .spider {
+          position: relative;
+          width: 56px;
+        }
+        
+        .spider-container .web {
+          width: 1px;
+          height: 100px;
+          margin-left: 28px;
+          background-color: black;
+        }
+        
+        .spider .body {
+          width: 25px;
+          height: 20px;
+          position: relative;
+          left: 16px;
+          border-radius: 50%;
+          background-color: black;
+          z-index: 10;
+        }
+          
+        .spider .eye {
+          width: 8px;
+          height: 8px;
+          position: absolute;
+          bottom: 7px;
+          background-color: white;
+          border-radius: 50%;
+        }
+        .spider .eye:after {
+          width: 2px;
+          height: 2px;
+          content: "";
+          display: block;
+          margin: 25%;
+          background-color: black;
+          border-radius: 50px;
+        }
+        .spider .eye.eye-left {
+          left: 3.5px;
+        }
+        .spider .eye.eye-right {
+          right: 3.5px;
+        }
+        
+        .spider .legs {
+          position: absolute;
+          bottom: -17%;
+          z-index: 0;
+        }
+        .spider .legs.legs-left {
+          left: 0;
+        }
+        .spider .legs.legs-right {
+          right: 0;
+        }
+          
+        .spider .leg {
+          width: 20px;
+          height: 10px;
+          margin-top: -10px;
+          border: 2px solid transparent;
+          border-top-color: black;
+        }
+        
+        .spider .legs.legs-left .leg {
+          border-radius: 15px 30px 0 0;
+        }
+        
+        .spider .legs.legs-right .leg {
+          border-radius: 30px 15px 0 0;
+        }
+        
+        .spider .legs.legs-left .leg:nth-child(1) {
+          -webkit-transform: rotate(25deg);
+                  transform: rotate(25deg);
+          margin-left: 1.5px;
+        }
+        
+        .spider .legs.legs-right .leg:nth-child(1) {
+          -webkit-transform: rotate(-25deg);
+                  transform: rotate(-25deg);
+          margin-left: -1.5px;
+        }
+        
+        .spider .legs.legs-left .leg:nth-child(2) {
+          -webkit-transform: rotate(-5deg);
+                  transform: rotate(-5deg);
+          margin-left: 4px;
+        }
+        
+        .spider .legs.legs-right .leg:nth-child(2) {
+          -webkit-transform: rotate(5deg);
+                  transform: rotate(5deg);
+          margin-left: -4px;
+        }
+          
+        .spider .legs.legs-left .leg:nth-child(3) {
+          -webkit-transform: rotate(-40deg);
+                  transform: rotate(-40deg);
+          margin-left: 6.5px;
+        }
+        
+        .spider .legs.legs-right .leg:nth-child(3) {
+          -webkit-transform: rotate(40deg);
+                  transform: rotate(40deg);
+          margin-left: -6.5px;
+        }
+        
+        @-webkit-keyframes moveUpAndDown {
+          0% {
+            -webkit-transform: scale(0.75) translateY(0);
+          }
+          50% {
+            -webkit-transform: scale(0.75) translateY(-130px);
+          }
+          50% {
+            -webkit-transform: scale(0.75) translateY(-130px);
+          }
+          50% {
+            -webkit-transform: scale(0.75) translateY(0);
+          }
+          100% {
+            -webkit-transform: scale(0.75) translateY(0);
+          }
+        }
+        
+        @keyframes moveUpAndDown {
+          0% {
+            transform: scale(0.75) translateY(0);
+          }
+          25% {
+            transform: scale(0.75) translateY(-130px);
+          }
+          50% {
+            transform: scale(0.75) translateY(-130px);
+          }
+          75% {
+            transform: scale(0.75) translateY(0);
+          }
+          100% {
+            transform: scale(0.75) translateY(0);
+          }
+        }
+        
+        .bat-container {
+          position: relative;
+          width: 56px;
+          top: -195px;
+          left: 8%;
+          -webkit-transform: rotate(-20deg) scale(0.50); /* Safari */
+          transform-origin: 0 0;
+          transform: rotate(-20deg) scale(0.50);
+        }
+        
+        .bat {
+          position: relative;
+          width: 56px;
+        }
+        
+        .bat .body {
+          width: 25px;
+          height: 35px;
+          position: absolute;
+          left: 16px;
+          border-radius: 50%;
+          background-color: black;
+          z-index: 10;
+        }
+        .bat .body:before {
+          background: white;
+          content: "";
+          height: 10px;
+          width: 20px;
+          top: -1px;
+          right: 20px;
+          position: absolute;
+          border-radius: 50%;
+        }
+        .bat .body:after {
+          background: white;
+          content: "";
+          height: 10px;
+          width: 20px;
+          top: -1px;
+          left: 20px;
+          position: absolute;
+          border-radius: 50%;
+        }
+        
+        .bat .body .ear-left {
+          width: 4px;
+          height: 10px;
+          position: absolute;
+          left: 5px;
+          top: -4px;
+          border-radius: 50%;
+          background-color: black;
+        }
+        
+        .bat .body .ear-right {
+          width: 4px;
+          height: 10px;
+          position: absolute;
+          right: 5px;
+          top: -4px;
+          border-radius: 50%;
+          background-color: black;
+        }
+        
+        .bat .tail-mask {
+          top: 24px;
+          width: 14px;
+          height: 18px;
+          position: absolute;
+          bottom: 7px;
+          background-color: white;
+        }
+         .bat .tail-mask.tail-mask-left {
+          left: -2.5px;
+          border-radius: 50%  50% 50% 0;
+          transform: rotate(-8deg);
+         }
+         .bat .tail-mask.tail-mask-right {
+          right: -2.5px;
+          border-radius: 50% 50% 0 50%;
+          transform: rotate(8deg);
+         }
+        
+        .bat .wings {
+          position: absolute;
+          bottom: -17%;
+          z-index: 0;
+        }
+        .bat .wings.wings-left {
+          top: 0;
+          left: -20px;
+        }
+        .bat .wings.wings-left:before {
+          background: white;
+          content: "";
+          height: 18px;
+          width: 12px;
+          top: 25px;
+          left: 0px;
+          position: absolute;
+          border-radius: 50%;
+        }
+        .bat .wings.wings-left:after {
+          background: white;
+          content: "";
+          height: 12px;
+          width: 12px;
+          top: 28px;
+          left: 12px;
+          position: absolute;
+          border-radius: 50%;
+        }
+          
+        .bat .wings.wings-right {
+          top: 0;
+          right: -20px;
+        }
+        .bat .wings.wings-right:before {
+          background: white;
+          content: "";
+          height: 18px;
+          width: 12px;
+          top: 25px;
+          right: 0px;
+          position: absolute;
+          border-radius: 50%;
+        }
+        .bat .wings.wings-right:after {
+          background: white;
+          content: "";
+          height: 12px;
+          width: 12px;
+          top: 28px;
+          right: 12px;
+          position: absolute;
+          border-radius: 50%;
+        }
+          
+        .bat .wing {
+          width: 40px;
+          height: 35px;
+          background: black;
+        }
+        
+        .bat .wings.wings-left .wing {
+          border-radius: 25px 10px 0 0;
+        }
+        .bat .wings.wings-left .wing:before {
+        }
+        .bat .wings.wings-left .wing:after {
+          background: white;
+          content: "";
+          height: 20px;
+          width: 16px;
+          top: 24px;
+          right: 0px;
+          position: absolute;
+          border-radius: 50%;
+        }
+          
+        .bat .wings.wings-right .wing {
+          border-radius: 10px 25px 0 0;
+        }
+        .bat .wings.wings-right .wing:before {
+        }
+        .bat .wings.wings-right .wing:after {
+          background: white;
+          content: "";
+          height: 20px;
+          width: 16px;
+          top: 24px;
+          left: 0px;
+          position: absolute;
+          border-radius: 50%;
+        }
+            
+        .pumpkins-container {
+          position: relative;
+          top: -200px;
+          width: 100%;
+        }
+        .pumpkins-element {
+          position: relative;
+          float: left;
+          top: 31px;
+          margin: 0 9px;
+        }
+        .pumpkin {
+          -webkit-box-sizing: content-box;
+          -moz-box-sizing: content-box;
+          box-sizing: content-box;
+          border: none;
+          -webkit-border-radius: 50% / 60% 60% 40% 40%;
+          border-radius: 50% / 60% 60% 40% 40%;
+          color: rgba(0,0,0,1);
+          -o-text-overflow: clip;
+          text-overflow: clip;
+        }
+    
+        .pumpkin {
+          position: relative;
+          width: 15em;
+          height: 15em;
+          border-radius: 0%;
+          margin: 0 auto;
+        }
+        
+        .moon-container {
+          position: relative;
+          top: -10px;
+          left: -10px;
+          width: 100px;
+          height: 100px;
+          border-radius: 0 0 50%;
+          overflow: hidden;
+        }
+        
+        .moon {
+          position: relative;
+          top: 10px;
+          left: 20px;
+          width: 80px;
+          height: 80px;
+          background: radial-gradient(ellipse at center, rgba(254, 254, 254,1) 50%,rgba(255, 251, 233,1) 63%,rgba(244, 175, 0,1) 87%, rgba(247,152,0,1) 100%);
+          border-radius: 50%;
+          overflow: hidden;
+          transition: opacity 0.25s ease-in-out;
+          opacity: 1;
+        }
+        
+        .grave-element {
+          left: 0px;
+        }
+        
+        .grave-element .grave-wrapper {
+          position: absolute;
+          top: 45px;
+          left: 0;
+          width: 100px;
+          height: 100px;
+        }
+        
+        .grave-wrapper .stone {
+          position: relative;
+          top: 0;
+          left: 0;
+          width: 70px;
+          height: 80px;
+          z-index: 60;
+          background: black;
+          border-radius: 20px;
+        }
+      
+        .grave-wrapper .stone .rip-text {
+          position: relative;
+          top: 15px;
+          text-align: center;
+          width: 100%;
+          color: #070707;
+          text-shadow: -1px -1px 1px #9a9898;
+          font-family: cursive, Tahoma, Verdana, Segoe, sans-serif;
+          font-size: 18pt;
+        }
+        
+        .pumpkin-one {
+          left: 110px;
+        }
+        
+        .pumpkin-two {
+          left: 230px;
+        }
+        
+        .pumpkin-three {
+          left: 380px;
+        }
+        
+        .pumpkin-wrapper {
+            position: absolute;
+            top: 30px;
+        }
+        
+        .pumpkin-one .pumpkin-wrapper {
+        }
+        
+        .pumpkin-two .pumpkin-wrapper {
+          transform: scale(1.25); 
+          top: 10px;
+        }
+        
+        .pumpkin-three .pumpkin-wrapper {
+        }
+        
+        .hump-wrapper {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100px;
+          height: 100px;
+          z-index: 60;
+        }
+        
+        .hump {
+          height: 80px;
+          width: 60px;
+          position: absolute;
+          top: 0;
+          background: linear-gradient(135deg, rgba(0, 0, 0, 1) 0%,rgba(0, 0, 0, 1) 75%,rgba(0, 0, 0, 1) 100%);
+          border-radius: 50% 50% 50% 50%;
+        }
+        
+        .hump-wrapper .hump:nth-child(1) {
+          left: 0;
+        }
+        .hump-wrapper .hump:nth-child(2) {
+          left: 20px
+        }
+        .hump-wrapper .hump:nth-child(3) {
+          left: 40px
+        }
+        
+        .stem {
+          position: absolute;
+          top: -15px;
+          width: 10px;
+          height: 40px;
+          margin: 0;
+          background-color: black/*#6EA412*/;
+          z-index: 40;
+          left: 45px;
+          border-radius: 100% 10% 0 0;
+        }
+        
+        .pumpkin-face .pumpkin-eye:before {
+          content: "";
+          position: absolute;
+          width: 23px;
+          height: 20px;
+          top: 15%;
+          right: 58%;
+          -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
+          background-image: linear-gradient(to left top, #fbb32f 50%, transparent 50%);
+        }
+        
+        .pumpkin-face .pumpkin-eye:after {
+          content: "";
+          position: absolute;
+          width: 23px;
+          height: 20px;
+          top: 15%;
+          left: 58%;
+          background-image: linear-gradient(to left top, #fbb32f 50%, transparent 50%);
+        }
+        
+        .pumpkin-face .pumpkin-noze {
+          position: absolute;
+          border-left: 5px solid black;
+          border-right: 5px solid black;
+          border-top: 0px solid black;
+          border-bottom: 8px solid transparent;
+          width: 1px;
+          height: 1px;
+          top: 35%;
+          left: 46%;
+          background: linear-gradient(to top, transparent 15%, #fbb32f 15%);
+        }
+        
+        .pumpkin-face .pumpkin-mouth {
+          position: absolute;
+          border-radius: 0 0 30px 30px;
+          width: 70px;
+          height: 20px;
+          top: 50%;
+          left: 15%;
+          background: radial-gradient(circle at center, #fbe22f 0, #fbb32f, #FB732F 100%);
+          animation: fireanimation 2s infinite;
+        }
+        
+        @-webkit-keyframes fireanimation {
+          0% {
+            background: radial-gradient(circle at center, rgba(244, 216, 0,1) 0%,rgba(247,189,0,1) 52%,rgba(244, 175, 0,1) 67%,rgba(247,152,0,1) 100%);
+          }
+          10% {
+            background: radial-gradient(circle at center, rgba(244, 216, 0,1) 0%,rgba(247,189,0,1) 42%,rgba(244, 175, 0,1) 57%,rgba(247,152,0,1) 90%);
+          }
+          20% {
+            background: radial-gradient(circle at center, rgba(244, 216, 0,1) 0%,rgba(247,189,0,1) 32%,rgba(244, 175, 0,1) 47%,rgba(247,152,0,1) 80%);
+          }
+          30% {
+            background: radial-gradient(circle at center, rgba(244, 216, 0,1) 0%,rgba(247,189,0,1) 22%,rgba(244, 175, 0,1) 37%,rgba(247,152,0,1) 70%);
+          }
+          40% {
+            background: radial-gradient(circle at center, rgba(244, 216, 0,1) 0%,rgba(247,189,0,1) 22%,rgba(244, 175, 0,1) 37%,rgba(247,152,0,1) 60%);
+          }
+          50% {
+            background: radial-gradient(circle at center, rgba(244, 216, 0,1) 0%,rgba(247,189,0,1) 22%,rgba(244, 175, 0,1) 37%,rgba(247,152,0,1) 60%);
+          }
+          60% {
+            background: radial-gradient(circle at center, rgba(244, 216, 0,1) 0%,rgba(247,189,0,1) 22%,rgba(244, 175, 0,1) 37%,rgba(247,152,0,1) 60%);
+          }
+          70% {
+            background: radial-gradient(circle at center, rgba(244, 216, 0,1) 0%,rgba(247,189,0,1) 32%,rgba(244, 175, 0,1) 47%,rgba(247,152,0,1) 70%);
+          }
+          80% {
+            background: radial-gradient(circle at center, rgba(244, 216, 0,1) 0%,rgba(247,189,0,1) 42%,rgba(244, 175, 0,1) 57%,rgba(247,152,0,1) 80%);
+          }
+          90% {
+            background: radial-gradient(circle at center, rgba(244, 216, 0,1) 0%,rgba(247,189,0,1) 52%,rgba(244, 175, 0,1) 67%,rgba(247,152,0,1) 90%);
+          }
+          100% {
+            background: radial-gradient(circle at center, rgba(244, 216, 0,1) 0%,rgba(247,189,0,1) 52%,rgba(244, 175, 0,1) 67%,rgba(247,152,0,1) 100%);
+          }
+        }
+        
+        @keyframes fireanimation {
+          0% {
+            background: radial-gradient(circle at center, rgba(244, 216, 0,1) 0%,rgba(247,189,0,1) 52%,rgba(244, 175, 0,1) 67%,rgba(247,152,0,1) 100%);
+          }
+          10% {
+            background: radial-gradient(circle at center, rgba(244, 216, 0,1) 0%,rgba(247,189,0,1) 42%,rgba(244, 175, 0,1) 57%,rgba(247,152,0,1) 90%);
+          }
+          20% {
+            background: radial-gradient(circle at center, rgba(244, 216, 0,1) 0%,rgba(247,189,0,1) 32%,rgba(244, 175, 0,1) 47%,rgba(247,152,0,1) 80%);
+          }
+          30% {
+            background: radial-gradient(circle at center, rgba(244, 216, 0,1) 0%,rgba(247,189,0,1) 22%,rgba(244, 175, 0,1) 37%,rgba(247,152,0,1) 70%);
+          }
+          40% {
+            background: radial-gradient(circle at center, rgba(244, 216, 0,1) 0%,rgba(247,189,0,1) 22%,rgba(244, 175, 0,1) 37%,rgba(247,152,0,1) 60%);
+          }
+          50% {
+            background: radial-gradient(circle at center, rgba(244, 216, 0,1) 0%,rgba(247,189,0,1) 22%,rgba(244, 175, 0,1) 37%,rgba(247,152,0,1) 60%);
+          }
+          60% {
+            background: radial-gradient(circle at center, rgba(244, 216, 0,1) 0%,rgba(247,189,0,1) 22%,rgba(244, 175, 0,1) 37%,rgba(247,152,0,1) 60%);
+          }
+          70% {
+            background: radial-gradient(circle at center, rgba(244, 216, 0,1) 0%,rgba(247,189,0,1) 22%,rgba(244, 175, 0,1) 37%,rgba(247,152,0,1) 70%);
+          }
+          80% {
+            background: radial-gradient(circle at center, rgba(244, 216, 0,1) 0%,rgba(247,189,0,1) 32%,rgba(244, 175, 0,1) 47%,rgba(247,152,0,1) 80%);
+          }
+          90% {
+            background: radial-gradient(circle at center, rgba(244, 216, 0,1) 0%,rgba(247,189,0,1) 42%,rgba(244, 175, 0,1) 57%,rgba(247,152,0,1) 90%);
+          }
+          100% {
+            background: radial-gradient(circle at center, rgba(244, 216, 0,1) 0%,rgba(247,189,0,1) 52%,rgba(244, 175, 0,1) 67%,rgba(247,152,0,1) 100%);
+          }
+        }
+        
+        .pumpkin-face .pumpkin-mouth:before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 24%;
+          width: 1px;
+          height: 1px;
+          border-left: 4px solid transparent;
+          border-right: 4px solid transparent;
+          border-top: 10px solid black;
+        }
+        
+        .pumpkin-face .pumpkin-mouth:after {
+          content: "";
+          position: absolute;
+          top: 0;
+          right: 24%;
+          width: 1px;
+          height: 1px;
+          border-left: 4px solid transparent;
+          border-right: 4px solid transparent;
+          border-top: 10px solid black;
+        }
+        
+        .pumpkin-one .pumpkin-face .pumpkin-eye:before {
+          width: 30px;
+          height: 20px;
+          right: 55%;
+          border-radius: 40px 40px 40px 40px;
+        }
+        
+        .pumpkin-one .pumpkin-face .pumpkin-eye:after {
+          width: 30px;
+          height: 20px;
+          left: 55%;
+          border-radius: 40px 40px 40px 40px;
+        }
+        
+        .pumpkin-one .pumpkin-face .pumpkin-mouth {
+          position: absolute;
+          border-radius: 0 0 30px 30px;
+          width: 60px;
+          height: 15px;
+          top: 52%;
+          left: 20%;
+          background: radial-gradient(circle at center, #fbe22f 0, #fbb32f, #FB732F 100%);
+          animation: fireanimation 1s infinite;
+        }
+        
+        .pumpkin-one .pumpkin-face .pumpkin-mouth:before {
+          content: "";
+          position: absolute;
+          top: 5px;
+          left: 24%;
+          width: 1px;
+          height: 1px;
+          border-left: 4px solid transparent;
+          border-right: 4px solid transparent;
+          border-top: 0 solid black;
+          border-bottom: 10px solid black;
+        }
+        
+        .pumpkin-three .pumpkin-face .pumpkin-eye:before {
+          width: 25px;
+          height: 20px;
+          top: 17%;
+          -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+          background-image: linear-gradient(to top, transparent 20%, #fbb32f 20%);
+          border-radius: 10px 10px 0 0;
+        }
+        
+        .pumpkin-three .pumpkin-face .pumpkin-eye:after {
+          width: 25px;
+          height: 20px;
+          top: 17%;
+          background-image: linear-gradient(to top, transparent 20%, #fbb32f 20%);
+          border-radius: 10px 10px 0 0;
+        }
+        
+        .pumpkin-three .pumpkin-face .pumpkin-noze {
+          border-left: 0;
+          border-right: 0;
+          border-top: 0;
+          border-bottom: 0;
+          border-radius: 60% 60% 50% 50%;
+          width: 12px;
+          height: 10px;
+          left: 45%;
+        }          
+        
+        .pumpkin-three .pumpkin-face .pumpkin-mouth {
+          position: absolute;
+          border-radius: 20px 20px 10px 10px;
+          width: 60px;
+          height: 15px;
+          top: 50%;
+          left: 20%;
+          background: radial-gradient(circle at center, #fbe22f 0, #fbb32f, #FB732F 100%);
+        }
+        
+        .pumpkin-three .pumpkin-face .pumpkin-mouth:before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 24%;
+          width: 7px;
+          height: 1px;
+          border-left: 0;
+          border-right: 0;
+          border-top: 7px solid black;
+        }
+        
+        .pumpkin-three .pumpkin-face .pumpkin-mouth:after {
+          content: "";
+          position: absolute;
+          top: 0;
+          right: 24%;
+          width: 7px;
+          height: 1px;
+          border-left: 0;
+          border-right: 0;
+          border-top: 7px solid black;
+        }
+        
+        .pumpkin-three .pumpkin-mouth-wrapper:after {
+          content: "";
+          position: absolute;
+          top: 59px;
+          right: 46%;
+          width: 7px;
+          height: 1px;
+          border-left: 0;
+          border-right: 0;
+          border-top: 7px solid black;
+        }
+        
+    </style>
+  </head>
+  
+  <body>
+    <div class="halloween-card">
+      <div class="sky">
+        <div class="moon-container">
+          <div class="moon"></div>
+        </div>
+          
+        <div class="spider-container">
+          <div class="web"></div>
+          <div class="spider">
+            <div class="body">
+              <div class="eye eye-left"></div>
+              <div class="eye eye-right"></div>
+            </div>
+            <div class="legs legs-left">
+              <div class="leg"></div>
+              <div class="leg"></div>
+              <div class="leg"></div>
+            </div>
+            <div class="legs legs-right">
+              <div class="leg"></div>
+              <div class="leg"></div>
+              <div class="leg"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bat-container">
+          <div class="bat">
+            <div class="body">
+              <div class="ear-left"></div>
+              <div class="ear-right"></div>
+              <div class="tail-mask tail-mask-left"></div>
+              <div class="tail-mask tail-mask-right"></div>
+            </div>
+            <div class="wings wings-left">
+              <div class="wing"></div>
+            </div>
+            <div class="wings wings-right">
+              <div class="wing"></div>
+            </div>
+          </div>      
+        </div>
+
+        <div class="pumpkins-container">
+          <div class="pumpkins-element grave-element">
+            <div class="grave-wrapper">
+              <div class="stone">
+                <div class="rip-text">RIP</div>
+              </div>
+            </div>  
+          </div>
+          <div class="pumpkins-element pumpkin-one">
+            <div class="pumpkin-wrapper">
+              <div class="stem"></div>
+              <div class="hump-wrapper">
+                <div class="hump"></div>
+                <div class="hump"></div>
+                <div class="hump"></div>
+                <div class="pumpkin-face">
+                  <div class="pumpkin-eye"></div>
+                  <div class="pumpkin-noze"></div>
+                  <div class="pumpkin-mouth"></div>
+                </div>
+              </div>
+            </div>  
+          </div>
+          <div class="pumpkins-element pumpkin-two">
+            <div class="pumpkin-wrapper">
+              <div class="stem"></div>
+              <div class="hump-wrapper">
+                <div class="hump"></div>
+                <div class="hump"></div>
+                <div class="hump"></div>
+                <div class="pumpkin-face">
+                  <div class="pumpkin-eye"></div>
+                  <div class="pumpkin-noze"></div>
+                  <div class="pumpkin-mouth"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="pumpkins-element pumpkin-three">
+            <div class="pumpkin-wrapper">            
+              <div class="stem"></div>
+              <div class="hump-wrapper">
+                <div class="hump"></div>
+                <div class="hump"></div>
+                <div class="hump"></div>
+                <div class="pumpkin-face">
+                  <div class="pumpkin-eye"></div>
+                  <div class="pumpkin-noze"></div>
+                  <div class="pumpkin-mouth-wrapper">
+                    <div class="pumpkin-mouth"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-container">
+        <span class="happy-text">Happy</span><br/><span class="halloween-text">Halloween</span>
+      </div>
+    </div>
+  </body>
+</html>
